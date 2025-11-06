@@ -15,7 +15,7 @@ export const step13 = {
     lineY.setVisible(true);
 
     // reset text
-    (squareABText.geometry as Two.TextGeometry).text = "areal: 160^2 + 80^2 = 32000";
+    (squareABText.geometry as Two.TextGeometry).text = "area: 160^2 + 80^2 = 32000";
 
     return sceneState;
   },

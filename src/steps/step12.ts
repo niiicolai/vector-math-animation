@@ -85,7 +85,7 @@ export const step12 = {
     (squareABText.userData as ObjectUserData).reposition();
 
     // Update squareABText text
-    (squareABText.geometry as Two.TextGeometry).text = "areal: 160^2 + 80^2 = 32000";
+    (squareABText.geometry as Two.TextGeometry).text = "area: 160^2 + 80^2 = 32000";
     (squareABText.geometry as Two.TextGeometry).options = { font: "14px Arial" };
 
     // Stop animation
