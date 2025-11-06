@@ -1,4 +1,5 @@
-# Vector Math Animation
+# Vector Animation
+A project using [TwoEasyEngine](https://github.com/niiicolai/two-easy-engine) to introduce the foundational concepts of vector mathematics through 2D animations.
 
 ## Development
 
