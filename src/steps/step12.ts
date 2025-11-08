@@ -5,7 +5,6 @@ import * as Two from "two-easy-engine";
 export const step12 = {
   title: "Vector Magnitude",
   description: `At this point, we can add the areas of the purple and yellow squares to get the area of the blue square: $160^2 + 80^2 = 32000 = c^2$. This means the length of the blue square's side is a number $c$ that, when multiplied by itself, gives $32000$, or $c \\cdot c = 32000$.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { renderer, objects } = sceneState;
     const {

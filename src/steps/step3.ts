@@ -4,7 +4,6 @@ import type { ObjectUserData } from "../types/object_user_data";
 export const step3 = {
   title: "Introduction",
   description: `Let's assign them the arbitrary coordinates $a$ and $b$.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { pointAText, pointBText } = sceneState.objects;
 

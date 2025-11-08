@@ -4,7 +4,6 @@ import type { ObjectUserData } from "../types/object_user_data";
 export const step1 = {
   title: "Introduction",
   description: "Imagine two circles in 2D space.",
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { pointA, pointB } = sceneState.objects;
 

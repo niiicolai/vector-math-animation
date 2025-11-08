@@ -4,7 +4,6 @@ import type { ObjectUserData } from "../types/object_user_data";
 export const step5 = {
   title: "Vector Magnitude",
   description: `Let's try to draw the direction $x = 160$ (purple line) and $y = 80$ (yellow line). This forms a triangle.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { lineABText, lineX, lineY } = sceneState.objects;
 

@@ -5,7 +5,6 @@ import * as Two from "two-easy-engine";
 export const step16 = {
   title: "Circle-Circle Collision",
   description: `If we just keep adding the normalized vector to the green circle's point until it reaches point $b$, the two circles will overlap, as you can see. But if we know the radii of the two circles, we can use the distance between their centers to determine if the circles are colliding.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { renderer, objects } = sceneState;
     const { pointA, pointAText, lineAB } = objects;

@@ -51,7 +51,7 @@ function App() {
     window.onresize = () => {
       sceneState.current.renderer.setSize(
         window.innerWidth,
-        window.innerHeight
+        window.innerWidth < 400 ? window.innerHeight / 1.5 : window.innerHeight
       );
       sceneState.current.scene.children.forEach((o: Two.Object2D) => {
         const data = o.userData as ObjectUserData;
@@ -90,7 +90,7 @@ function App() {
     const scene = new Two.Scene();
     const renderer = new Two.Renderer2D(canvas, scene, camera, {
       width: window.innerWidth,
-      height: window.innerHeight,
+      height: window.innerWidth < 400 ? window.innerHeight / 1.5 : window.innerHeight,
       devicePixelRatio: window.devicePixelRatio || 1,
       backgroundColor: black,
     });
@@ -327,45 +327,29 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <div className={`fixed ${step.dialogPosition} z-10 `}>
-        <div className="bg-slate-800 rounded-md p-3 text-white flex flex-col justify-between gap-3 w-64">
-          <div>
-            {step.title && (
-              <h2 className="font-bold text-lg mb-1">{step.title}</h2>
-            )}
+    <div className="w-full h-screen bg-black">
+      <div className="fixed top-3 left-3 right-3 flex items-center justify-between gap-3 mb-1 text-slate-400 z-10">
+        {step.title && <h2 className="font-bold text-sm mb-1">{step.title}</h2>}
+        <p className="text-sm text-center">
+          Step {stepIndex + 1} of {steps.length}
+        </p>
+      </div>
 
-            <Markdown
-              remarkPlugins={[remarkMath]}
-              rehypePlugins={[rehypeKatex]}
-            >
-              {step.description}
-            </Markdown>
+      <div className={`fixed w-full h-screen flex justify-end items-end z-10`}>
+        <div className="flex-1 bg-slate-800/[.3] p-3 text-white flex flex-col justify-between gap-3 w-64">
+          <div>
+            <div className="text-sm">
+              <Markdown
+                remarkPlugins={[remarkMath]}
+                rehypePlugins={[rehypeKatex]}
+              >
+                {step.description}
+              </Markdown>
+            </div>
           </div>
 
-          <div className="border-t border-black mt-1 pt-3">
-            <p className="text-sm text-center mb-3">
-              Step {stepIndex + 1} of {steps.length}
-            </p>
-
-            <div className="flex gap-1">
-              {stepIndex > 0 && (
-                <button
-                  onClick={() => prevStep()}
-                  className="border border-black rounded-md bg-slate-500 hover:bg-slate-600 cursor-pointer text-black w-full py-1"
-                >
-                  Previous Step
-                </button>
-              )}
-              <button
-                onClick={() => nextStep()}
-                className="border border-black rounded-md bg-emerald-500 hover:bg-emerald-600 cursor-pointer text-black w-full py-1"
-              >
-                Next Step
-              </button>
-            </div>
-
-            <footer className="mt-3 text-xs">
+          <div className="border-t border-black mt-1 pt-3 flex items-center justify-between">
+            <div className="text-xs">
               Created with{" "}
               <a
                 href="https://niiicolai.github.io/two-easy-engine"
@@ -374,11 +358,30 @@ function App() {
               >
                 TwoEasyEngine
               </a>
-            </footer>
+            </div>
+
+            <div className="flex justify-end gap-1">
+              {stepIndex > 0 && (
+                <button
+                  onClick={() => prevStep()}
+                  className="max-w-48 border border-black rounded-md bg-slate-500 hover:bg-slate-600 cursor-pointer text-black text-sm py-1 px-3"
+                >
+                  Previous Step
+                </button>
+              )}
+              {stepIndex < steps.length - 1 && (
+                <button
+                  onClick={() => nextStep()}
+                  className="max-w-48 border border-black rounded-md bg-emerald-500 hover:bg-emerald-600 cursor-pointer text-black text-sm py-1 px-3"
+                >
+                  Next Step
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
-      <canvas ref={canvasRef} />
+      <canvas ref={canvasRef} className="w-full h-screen/.6 md:h-screen" />
     </div>
   );
 }

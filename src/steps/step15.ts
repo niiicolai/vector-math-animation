@@ -5,7 +5,6 @@ import * as Two from "two-easy-engine";
 export const step15 = {
   title: "Normalized Vector",
   description: `All we need to do to get the normalized vector is dividing the direction $\\vec{AB} = (160, 80)$ by its magnitude $178.88$, giving $(160/178.88, 80/178.88) = (0.89, 0.45) = \\vec{AB_{normalized}}$. Tip: If we multiply the normalized vector with a number (scalar), it is possible to increase the speed: $\\vec{AB_{normalized}} \\cdot n = (AB_{normalized_x} \\cdot n, AB_{normalized_y} \\cdot n)$.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { pointA, lineAB, squareABText, pointAText } = sceneState.objects;
 

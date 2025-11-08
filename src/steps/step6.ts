@@ -4,7 +4,6 @@ import type { ObjectUserData } from "../types/object_user_data";
 export const step6 = {
   title: "Vector Magnitude",
   description: `We can draw three squares (a rectangle where all sides have the same length) using the triangle's three sides. Let's call the purple square $a$, the yellow square $b$, and the blue square $c$.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const {
       lineX,

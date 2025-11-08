@@ -5,7 +5,6 @@ import * as Two from "two-easy-engine";
 export const step13 = {
   title: "Vector Magnitude",
   description: `Asking for what number multiplied itself gives the length of a square's side is the same as asking for the square root: $\\sqrt{side^2}$ = side. So at this point we can conclude $c$ must be $\\sqrt{a^2 + b^2}$ or in other words $\\sqrt{32000}$. That also means the length/magnitude of the blue line is $||\\vec{AB}|| = \\sqrt{32000}$ ~ $178.88$ units.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { squareAB, squareABText, lineX, lineY } = sceneState.objects;
 
@@ -32,8 +31,8 @@ export const step13 = {
     squareABText.setUserData({
       reposition: () => {
         squareABText.transform.position.set(
-          renderer.getCenterX() - 170,
-          renderer.getCenterY() - 50
+          renderer.getCenterX() - 100,
+          renderer.getCenterY() - 120
         );
       },
     });

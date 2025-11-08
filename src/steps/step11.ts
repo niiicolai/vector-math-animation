@@ -5,7 +5,6 @@ import * as Two from "two-easy-engine";
 export const step11 = {
   title: "Vector Magnitude",
   description: `Then, move the pieces into the blue square. What you see is that the sum of the areas of the yellow and purple squares fits perfectly inside the blue square, or in other words, $a^2 + b^2 = c^2$`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     return sceneState;
   },

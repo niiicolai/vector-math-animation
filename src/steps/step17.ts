@@ -5,7 +5,6 @@ import * as Two from "two-easy-engine";
 export const step17 = {
   title: "Circle-Circle Collision",
   description: `Let's move the green circle back to its original position and then move it toward the red circle until the squared sum of the radii is greater than or equal to the squared distance of the blue line: $(r_1 + r_2)^2 >= (p2_x - p1_x)^2 + (p2_y - p1_y)^2$; Notice we don't use the actual distance: $\\sqrt{a^2+b^2}$; because it's quicker to compare squared distance.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { objects, renderer } = sceneState;
     const { squareABText, lineAB, radLineA, radLineB, pointAText, pointBText } = objects;
@@ -14,8 +13,8 @@ export const step17 = {
     squareABText.setUserData({
       reposition: () => {
         squareABText.transform.position.set(
-          renderer.getCenterX() - 170,
-          renderer.getCenterY() - 50
+          renderer.getCenterX() - 100,
+          renderer.getCenterY() - 120
         );
       },
     });
@@ -72,8 +71,8 @@ export const step17 = {
     squareABText.setUserData({
       reposition: () => {
         squareABText.transform.position.set(
-          renderer.getCenterX() - 270,
-          renderer.getCenterY() - 50
+          renderer.getCenterX() - 120,
+          renderer.getCenterY() - 120
         );
       },
     });

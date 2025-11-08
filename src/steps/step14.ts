@@ -4,7 +4,6 @@ import * as Two from "two-easy-engine";
 export const step14 = {
   title: "Normalized Vector",
   description: `The direction vector $\\vec{AB} = (160, 80)$ can be added to the green circle's position to move it to the red circle, but instead of moving slowly toward the red circle, it would be teleported. However, since we know the length/magnitude, $||\\vec{AB}||$, we can scale the vector down to get a new vector with a length of $1$ and move the green circle slowly $1$ unit toward the red circle. The new vector is called a normalized vector.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { lineAB } = sceneState.objects;
 

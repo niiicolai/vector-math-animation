@@ -5,7 +5,6 @@ export const step2 = {
   title: "Introduction",
   description:
     "A line can be drawn between them that represents the direction in which they must move to meet each other.",
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { lineAB } = sceneState.objects;
 

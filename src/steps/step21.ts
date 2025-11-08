@@ -4,7 +4,6 @@ import type { SceneState } from "../types/scene_state";
 export const step21 = {
   title: "Dot Product and Projection",
   description: `Now, let's add a new vector (the orange line) and calculate the dot product for the orange and purple line, and the dot product for the orange and yellow line. Let's say the orange line is the vector $\\vec{v_{orange}} = (-60, 150)$. If we calculate the dot product of the purple and the orange line, we get a positive number: $(-60)(-80) + (150)(160) = dot = 28800$. Because it is positive, it tells us they are pointing the same direction. On the other hand, the dot product for the orange line and yellow line is a negative number: $(-60) \\cdot (80) + (150) \\cdot (-160) = dot = -28800$, because they are pointing in the opposite direction.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { objects } = sceneState;
     const { lineABProjEx } = objects;

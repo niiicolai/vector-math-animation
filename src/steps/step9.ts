@@ -4,7 +4,6 @@ import type { SceneState } from "../types/scene_state";
 export const step9 = {
   title: "Vector Magnitude",
   description: `Now, let's move the yellow square so that it fits inside the blue square.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { renderer, objects } = sceneState;
     const { squareY } = objects;

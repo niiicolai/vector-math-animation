@@ -5,7 +5,6 @@ import * as Two from "two-easy-engine";
 export const step18 = {
   title: "Circle-Circle Collision",
   description: `We can see the green circle slightly moving toward $(160, 80)$ and stopping when the squared distance between them equals the squared radii of the two circles.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { objects, renderer } = sceneState;
     const { squareABText, lineAB, radLineA, radLineB, pointAText, pointBText } =
@@ -15,8 +14,8 @@ export const step18 = {
     squareABText.setUserData({
       reposition: () => {
         squareABText.transform.position.set(
-          renderer.getCenterX() - 170,
-          renderer.getCenterY() - 50
+          renderer.getCenterX() - 120,
+          renderer.getCenterY() - 120
         );
       },
     });

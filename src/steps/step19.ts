@@ -5,7 +5,6 @@ import * as Two from "two-easy-engine";
 export const step19 = {
   title: "Normal Vector",
   description: `Let's move the green circle back. Now, what if we wanted to rotate the direction vector ($\\vec{AB}$) $90$ degrees counter-clockwise? All we need to do is switch the $x$ and $y$ of our direction vector and put a minus in front of y: $\\vec{AB_{normal_{counter-clockwise}}} = (-y, x)$ (the purple line). We can also move it clockwise by putting the minus in front of $x$ instead: $ \\vec{AB_{normal_{clockwise}}} = (y, -x)$ (the yellow line). These are called normal vectors.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { objects, renderer } = sceneState;
     const {
@@ -21,14 +20,6 @@ export const step19 = {
     } = objects;
 
     // Reset radLineA and SquareAXText position
-    squareABText.setUserData({
-      reposition: () => {
-        squareABText.transform.position.set(
-          renderer.getCenterX() - 270,
-          renderer.getCenterY() - 50
-        );
-      },
-    });
     radLineA.setUserData({
       reposition: () => {
         radLineA.transform.position.set(
@@ -38,7 +29,6 @@ export const step19 = {
       },
     });
     (radLineA.userData as ObjectUserData).reposition();
-    (squareABText.userData as ObjectUserData).reposition();
 
     // Display squareABText and radius lines
     squareABText.setVisible(true);

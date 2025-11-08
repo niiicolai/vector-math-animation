@@ -5,7 +5,6 @@ import type { ObjectUserData } from "../types/object_user_data";
 export const step7 = {
   title: "Vector Magnitude",
   description: `Now, to continue, it's important to know that the area of a square is the length of one of its sides multiplied by itself, or in other words $side \\cdot side$, which is the same as the side squared: $side^2$. Let's rename the squares to represent their areas.`,
-  dialogPosition: "bottom-3 right-3 w-full h-screen flex justify-end items-end",
   reduceState: (sceneState: SceneState): SceneState => {
     const { squareABText, squareXText, squareYText } = sceneState.objects;
 
