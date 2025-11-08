@@ -6,7 +6,7 @@ export const step19 = {
   title: "Normal Vector",
   description: `Let's move the green circle back. Now, what if we wanted to rotate the direction vector ($\\vec{AB}$) $90$ degrees counter-clockwise? All we need to do is switch the $x$ and $y$ of our direction vector and put a minus in front of y: $\\vec{AB_{normal_{counter-clockwise}}} = (-y, x)$ (the purple line). We can also move it clockwise by putting the minus in front of $x$ instead: $ \\vec{AB_{normal_{clockwise}}} = (y, -x)$ (the yellow line). These are called normal vectors.`,
   reduceState: (sceneState: SceneState): SceneState => {
-    const { objects, renderer } = sceneState;
+    const { objects } = sceneState;
     const {
       pointA,
       squareABText,
