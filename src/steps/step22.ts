@@ -3,7 +3,7 @@ import type { SceneState } from "../types/scene_state";
 
 export const step22 = {
   title: "Dot Product and Projection",
-  description: `Finally, we can calculate the length of the projection of the orange line onto the purple line. The projection tells us how far they are pointing in the same direction (see the green line). The projection length is the result of the dot product divided by the length of the purple line: $\\frac{\\vec{v_{orange}} \\cdot \\vec{v_{purple}}}{||\\vec{v_{purple}}||}$. The result is: $\\frac{(-60)(-80) + (150)(160)}{\\sqrt{(-80)^2 + 160^2}} = \\frac{28800}{\\sqrt{32000}} = 160.99$. So, the length of the green line is ~ $161$ Understanding how to find this projection is the crucial first step in more complex calculations, like determining if two convex polygons overlap. For example, take a look at the Separating Axis Theorem, you should now know the essentials.`,
+  description: `Finally, we can calculate the length of the projection of the orange line onto the purple line. The projection tells us how far they are pointing in the same direction (see the green line). The projection length is the result of the dot product divided by the length of the purple line: $\\frac{\\vec{v_{orange}} \\cdot \\vec{v_{purple}}}{||\\vec{v_{purple}}||}$. The result is: $\\frac{(-60)(-80) + (150)(160)}{\\sqrt{(-80)^2 + 160^2}} = \\frac{28800}{\\sqrt{32000}} = 160.99$. So, the length of the green line is ~ $161$`,
   reduceState: (sceneState: SceneState): SceneState => {
     const { objects } = sceneState;
     const { lineABProjLen } = objects;

@@ -84,18 +84,28 @@ function App() {
 
     const textSm = { font: "12px Arial" };
     const textMd = { font: "18px Arial" };
+    const textLg = { font: "24px Arial" };
 
     const clock = new Two.Clock();
     const camera = new Two.Camera2D();
     const scene = new Two.Scene();
     const renderer = new Two.Renderer2D(canvas, scene, camera, {
       width: window.innerWidth,
-      height: window.innerWidth < 400 ? window.innerHeight / 1.5 : window.innerHeight,
+      height:
+        window.innerWidth < 400 ? window.innerHeight / 1.5 : window.innerHeight,
       devicePixelRatio: window.devicePixelRatio || 1,
       backgroundColor: black,
     });
 
     const objects = {} as { [key: string]: Two.Mesh };
+
+    objects.introText = new Two.Mesh(
+      new Two.TextGeometry("Vector Fundamentals", textLg),
+      new Two.BasicMaterial({
+        strokeStyle: new Two.HslaColor(50, 100, 60, 1),
+        lineWidth: 1,
+      })
+    );
 
     // Create point a and b circle and text
     objects.pointA = new Two.Mesh(
@@ -327,7 +337,12 @@ function App() {
   }, []);
 
   return (
-    <div className="w-full h-screen bg-black">
+    <>
+      <canvas
+        ref={canvasRef}
+        className="fixed top-0 bottom-0 left-0 right-0 w-full h-screen/.6 md:h-screen z-1"
+      />
+
       <div className="fixed top-3 left-3 right-3 flex items-center justify-between gap-3 mb-1 text-slate-400 z-10">
         {step.title && <h2 className="font-bold text-sm mb-1">{step.title}</h2>}
         <p className="text-sm text-center">
@@ -335,8 +350,10 @@ function App() {
         </p>
       </div>
 
-      <div className={`fixed w-full h-screen flex justify-end items-end z-10`}>
-        <div className="flex-1 bg-slate-800/[.3] p-3 text-white flex flex-col justify-between gap-3 w-64">
+      <div
+        className="fixed w-full bottom-0 left-0 right-0 z-10"
+      >
+        <div className="flex-1 bg-slate-800/[.3] p-3 text-white flex flex-col justify-between gap-3 w-full">
           <div>
             <div className="text-sm">
               <Markdown
@@ -381,8 +398,7 @@ function App() {
           </div>
         </div>
       </div>
-      <canvas ref={canvasRef} className="w-full h-screen/.6 md:h-screen" />
-    </div>
+    </>
   );
 }
 

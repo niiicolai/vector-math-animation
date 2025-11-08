@@ -5,7 +5,10 @@ export const step1 = {
   title: "Introduction",
   description: "Imagine two circles in 2D space.",
   reduceState: (sceneState: SceneState): SceneState => {
-    const { pointA, pointB } = sceneState.objects;
+    const { pointA, pointB, introText } = sceneState.objects;
+
+    // Display introText
+    introText.setVisible(true);
 
     // Hide point a and b
     pointA.setVisible(false);
@@ -15,7 +18,10 @@ export const step1 = {
   },
   updateState: (sceneState: SceneState): SceneState => {
     const { clock, renderer, objects } = sceneState;
-    const { pointA, pointB } = objects;
+    const { pointA, pointB, introText } = objects;
+
+    // Hide introText
+    introText.setVisible(false);
 
     // Display point a and b
     pointA.setVisible(true);

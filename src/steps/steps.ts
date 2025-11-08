@@ -14,13 +14,17 @@ import { step19 } from "./step19";
 import { step2 } from "./step2";
 import { step20 } from "./step20";
 import { step21 } from "./step21";
+import { step21b } from "./step21b";
 import { step22 } from "./step22";
+import { step23 } from "./step23";
 import { step3 } from "./step3";
 import { step4 } from "./step4";
+import { step4b } from "./step4b";
 import { step5 } from "./step5";
 import { step6 } from "./step6";
 import { step7 } from "./step7";
 import { step8 } from "./step8";
+import { step8b } from "./step8b";
 import { step9 } from "./step9";
 
 export const steps = [
@@ -29,10 +33,12 @@ export const steps = [
     step2,
     step3,
     step4,
+    step4b,
     step5,
     step6,
     step7,
     step8,
+    step8b,
     step9,
     step10,
     step11,
@@ -46,5 +52,7 @@ export const steps = [
     step19,
     step20,
     step21,
+    step21b,
     step22,
+    step23,
 ] as Step[];

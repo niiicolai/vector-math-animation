@@ -4,7 +4,7 @@ import type { ObjectUserData } from "../types/object_user_data";
 
 export const step4 = {
   title: "Vector Subtraction",
-  description: `The direction of the blue line depends on whether you are going from $a$ to $b$ or from $b$ to $a$. If we are going from $a$ to $b$, we want to add the difference from $a_x = 0$ to $b_x = 160$ and from $a_y = 0$ to $b_y = 80$, or in other words $(b_x - a_x, b_y - a_y)$, which is $(160, 80)$ because point $a$'s values are zero. From this, we can conclude that the direction from $a$ to $b$ is $(160, 80)$. This direction is called a vector, and we denote a vector with a small arrow above the variable, for example: $\\vec{AB}=(160, 80)$. Note: we subtracted the coordinates of point $a$ and $b$ to find the direction/displacement vector $\\vec{AB}$. In vector math, point $a$ and $b$ can be thought of as position vectors ($\\vec{A}$ and $\\vec{B}$) and the displacement vector is simply the result of vector subtraction.`,
+  description: `The direction of the blue line depends on whether you are going from $a$ to $b$ or from $b$ to $a$. If we are going from $a$ to $b$, we want to add the difference from $a_x = 0$ to $b_x = 160$ and from $a_y = 0$ to $b_y = 80$, or in other words $(b_x - a_x, b_y - a_y)$, which is $(160, 80)$ because point $a$'s values are zero. From this, we can conclude that the direction from $a$ to $b$ is $(160, 80)$.`,
   reduceState: (sceneState: SceneState): SceneState => {
     const { lineABText } = sceneState.objects;
 
